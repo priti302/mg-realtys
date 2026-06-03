@@ -1,0 +1,476 @@
+/* src/components/Footer.css */
+.footer {
+  background: linear-gradient(135deg, #0A1F44 0%, #0a2a5a 100%);
+  color: #FFFFFF;
+  padding: 3rem 0 0;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wave Animation */
+.footer-wave {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.footer-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 50px;
+}
+
+.footer-wave .shape-fill {
+  fill: #FFFFFF;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Brand Section */
+.brand-section {
+  animation: fadeInUp 0.6s ease;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #a0b8d4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo-dot {
+  width: 6px;
+  height: 6px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  margin-left: 4px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.footer-desc {
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.trust-badge {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.trust-badge span {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.rera-certification {
+  margin-top: 1rem;
+  padding: 10px 15px;
+  background: rgba(255, 215, 0, 0.1);
+  border-left: 3px solid #ffd700;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.rera-certification p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffd700;
+}
+
+/* Footer Sections */
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.footer-section h4::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #FFFFFF;
+  border-radius: 2px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-section ul li a:hover {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Contact Details */
+.contact-detail {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  min-width: 30px;
+}
+
+.contact-detail p {
+  margin: 0;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.contact-detail a {
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-detail a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.off-day {
+  color: #ffd700;
+  font-weight: 500;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+}
+
+.social-icon.facebook:hover {
+  background: #1877f2;
+  transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon.instagram:hover {
+  background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon.linkedin:hover {
+  background: #0077b5;
+  transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon.twitter:hover {
+  background: #1da1f2;
+  transform: translateY(-5px) scale(1.1);
+}
+
+.social-icon.youtube:hover {
+  background: #ff0000;
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  background: #0A1F44;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background: #1a3a6e;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.whatsapp-icon {
+  background: #25D366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  animation: pulse-green 2s infinite;
+}
+
+.whatsapp-icon svg {
+  color: white;
+  width: 35px;
+  height: 35px;
+}
+
+.whatsapp-float:hover .whatsapp-icon {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-notification {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff4444;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 1s infinite;
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #0A1F44;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 80px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-green {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(37, 211, 102, 0.8);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-section h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .trust-badge {
+    justify-content: center;
+  }
+
+  .contact-detail {
+    justify-content: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-section ul li a {
+    justify-content: center;
+  }
+
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .whatsapp-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .scroll-top-btn {
+    bottom: 90px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 16px;
+  }
+  
+  .trust-badge {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .trust-badge span {
+    width: fit-content;
+  }
+}
+
+
+.footer-logo-img {
+  height: 60px;
+  transition: 0.3s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.05);
+}
