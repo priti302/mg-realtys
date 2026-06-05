@@ -5,12 +5,12 @@ import './Intro.css';
 function Intro({ onComplete }) {
   const [animationState, setAnimationState] = useState('initial');
   const [displayText, setDisplayText] = useState('');
-  const fullText = "Welcome to MG Realtys";
-  const subText = "Trusted Real Estate Consulting in Pune | 5+ Years Experience";
+  const fullText = "Welcome to MG Realtys.";
+  const subText = "Trusted Real Estate Consultant in Pune | 7+ Years Experience";
   const [subIndex, setSubIndex] = useState(0);
 
   useEffect(() => {
-    document.title = "MG Realtys - Premier Real Estate Consulting in Pune";
+    document.title = "MG Realtys - Premier Real Estate Consultants in Pune";
     
     // Update meta tags for SEO
     let metaDesc = document.querySelector('meta[name="description"]');
@@ -19,7 +19,7 @@ function Intro({ onComplete }) {
       metaDesc.name = 'description';
       document.head.appendChild(metaDesc);
     }
-    metaDesc.setAttribute('content', 'MG Realtys offers expert real estate consulting in Pune. Residential & commercial properties with 5+ years of trusted experience.');
+    metaDesc.setAttribute('content', 'MG Realtys offers expert real estate consulting in Pune. Residential & commercial properties with 7+ years of trusted experience.');
 
     // Open Graph tags
     let ogTitle = document.querySelector('meta[property="og:title"]');
@@ -28,7 +28,7 @@ function Intro({ onComplete }) {
       ogTitle.setAttribute('property', 'og:title');
       document.head.appendChild(ogTitle);
     }
-    ogTitle.setAttribute('content', 'MG Realtys - Premier Real Estate Consulting');
+    ogTitle.setAttribute('content', 'MG Realtys - Premier Real Estate Consultants');
 
     // Typing animation for main title
     let currentIndex = 0;
@@ -76,7 +76,7 @@ function Intro({ onComplete }) {
         
         <h1 className="intro-title">
           {displayText}
-          <span className="cursor">|</span>
+         
         </h1>
         
         <p className={`intro-subtitle ${animationState === 'complete' ? 'show' : ''}`}>
@@ -85,7 +85,7 @@ function Intro({ onComplete }) {
         </p>
 
         <div className={`intro-locations ${animationState === 'complete' ? 'show' : ''}`}>
-          <p>We are services in here right now:</p>
+          <p>We offers services in these locations:</p>
           <ul>
             <li>Maharashtra</li>
             <li>Delhi, Gurgaon</li>
