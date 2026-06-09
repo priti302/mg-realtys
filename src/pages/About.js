@@ -4,6 +4,9 @@ import './About.css';
 import ceoImg from "../assets/ceo.PNG";
 import hrImg from "../assets/hr.png";
 import coowner from "../assets/coowner.png";
+import Teamleader from "../assets/Teamleader.png";
+import web from "../assets/web.jpeg";
+import pre from "../assets/pre.jpeg";
 
 function About() {
   const [animated, setAnimated] = useState(false);
@@ -40,6 +43,27 @@ function About() {
   role: 'Director & Co-owner',
   img: coowner,
   bio: 'Driving growth through leadership and customer-focused solutions.',
+ 
+},
+{
+  name: 'Grace Aghamkar',
+  role: 'Sr. Team leader',
+  img: Teamleader,
+  bio: 'Leading with vision, inspiring success, and building lasting relationships through trust, expertise, and commitment.',
+ 
+},
+{
+  name: 'Priti Khedkar',
+  role: 'Web Developer',
+  img: web,
+  bio: 'Specializing in web development, creative design, and digital marketing to strengthen MG Realtys online presence, engage customers, and generate quality leads.',
+ 
+},
+{
+  name: 'Gayatri Kamble',
+  role: 'Pre-Sales Head',
+  img: pre,
+  bio: 'Focused on understanding customer needs, managing inquiries, and providing expert guidance to help clients make informed decisions while supporting the companys sales objectives.',
  
 }
 ];
