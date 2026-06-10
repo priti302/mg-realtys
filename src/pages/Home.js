@@ -2,7 +2,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
-import LeadGenModal from '../components/LeadGenModal';
 
 import lodha from "../assets/lodha.png";
 import shapoorji from "../assets/shapoorji.jpg";
@@ -704,8 +703,6 @@ Our expert will connect with you shortly.
         </div>
       )}
 
-      {/* Lead Generation Modal */}
-      <LeadGenModal />
     </main>
   );
 }

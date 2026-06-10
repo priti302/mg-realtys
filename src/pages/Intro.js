@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from 'react';
 import './Intro.css';
 
+
 function Intro({ onComplete }) {
   const [animationState, setAnimationState] = useState('initial');
   const [displayText, setDisplayText] = useState('');
   const fullText = "Welcome to MG Realtys.";
-  const subText = "Trusted Real Estate Consultant in Pune | 7+ Years Experience";
+  const subText = "The professional expert in real estate | 7+ Years Experience";
   const [subIndex, setSubIndex] = useState(0);
 
   useEffect(() => {
@@ -85,7 +86,7 @@ function Intro({ onComplete }) {
         </p>
 
         <div className={`intro-locations ${animationState === 'complete' ? 'show' : ''}`}>
-          <p>We offers services in these locations:</p>
+          <p>We offer services in these locations:</p>
           <ul>
             <li>Maharashtra</li>
             <li>Delhi, Gurgaon</li>

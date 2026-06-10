@@ -32,13 +32,6 @@ function About() {
   bio: 'Leading MG Realty with vision, expertise, and integrity.',
 },
 {
-  name: 'Pallavi Gondhane',
-  role: 'HR & Digital Marketing Head',
-  img: hrImg,
-  bio: 'Building strong teams and impactful digital strategies.',
-  
-},
-{
   name: 'Shradha Singh',
   role: 'Director & Co-owner',
   img: coowner,
@@ -46,11 +39,11 @@ function About() {
  
 },
 {
-  name: 'Grace Aghamkar',
-  role: 'Sr. Team leader',
-  img: Teamleader,
-  bio: 'Leading with vision, inspiring success, and building lasting relationships through trust, expertise, and commitment.',
- 
+  name: 'Pallavi Gondhane',
+  role: 'HR & Digital Marketing Head',
+  img: hrImg,
+  bio: 'Building strong teams and impactful digital strategies.',
+  
 },
 {
   name: 'Priti Khedkar',
@@ -59,6 +52,15 @@ function About() {
   bio: 'Specializing in web development, creative design, and digital marketing to strengthen MG Realtys online presence, engage customers, and generate quality leads.',
  
 },
+
+{
+  name: 'Grace Aghamkar',
+  role: 'Sr. Team leader',
+  img: Teamleader,
+  bio: 'Leading with vision, inspiring success, and building lasting relationships through trust, expertise, and commitment.',
+ 
+},
+
 {
   name: 'Gayatri Kamble',
   role: 'Pre-Sales Head',
