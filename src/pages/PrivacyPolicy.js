@@ -9,7 +9,7 @@ function PrivacyPolicy() {
   return (
     <main className="page-container privacy-policy">
       <h1>Privacy Policy</h1>
-      <p className="last-updated">Last Updated: January 2024</p>
+      <p className="last-updated">Last Updated: June 2026</p>
 
       <section>
         <h2>Information Collection</h2>
@@ -44,7 +44,7 @@ function PrivacyPolicy() {
 
       <section>
         <h2>Your Rights</h2>
-        <p>You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at privacy@mgrealtys.com. We respond to all requests within 30 days.</p>
+        <p>You have the right to access, correct, or delete your personal data. To exercise these rights, contact us at mgrealtys01@gmail.com. We respond to all requests within 30 days.</p>
       </section>
     </main>
   );

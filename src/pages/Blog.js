@@ -25,7 +25,7 @@ function Blog() {
   const featuredBlogs = [
     {
       id: 1,
-      title: 'Top 10 Investment Properties in Pune 2024',
+      title: 'Top 10 Investment Properties in Pune 2026',
       excerpt: 'Discover the most promising real estate investment opportunities in Pune with expected ROI and market trends.',
       category: 'Property Investment',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80',

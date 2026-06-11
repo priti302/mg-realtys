@@ -52,7 +52,7 @@ function Contact() {
   return (
     <main className="page-container">
       <div className="contact-header">
-        <h1>Get In Touch</h1>
+       
         <p>We're here to help you find your perfect property</p>
       </div>
 

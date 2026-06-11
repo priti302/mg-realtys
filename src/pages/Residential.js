@@ -1,7 +1,7 @@
 // src/pages/Residential.js
 import React, { useEffect, useState } from 'react';
 import './Residential.css';
-
+import Kumarcity from "../assets/Kumarcity.png";
 function Residential() {
   useEffect(() => {
     document.title = "Residential Properties in Pune - MGRealtys | Best Homes & Apartments";
@@ -97,19 +97,19 @@ function Residential() {
       rating: 5.0
     },
     {
-      id: 6,
-      name: "Kumar City",
-      location: "Wakad, Pune",
-      price: "₹75 Lacs - ₹2 Cr",
-      area: "1, 2, 3 BHK",
-      size: "550 - 1600 sq.ft",
-      description: "Budget-friendly apartments with all modern amenities. Close to Mumbai-Bangalore Highway.",
-      image: "https://images.unsplash.com/photo-1560185008-a7b66b4a2b4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80",
-      amenities: ["Pool", "Gym", "Garden", "Community Hall", "Security"],
-      builder: "Kumar Builders",
-      possession: "Ready to Move",
-      rating: 4.5
-    }
+  id: 6,
+  name: "Kumar City",
+  location: "Wakad, Pune",
+  price: "₹75 Lacs - ₹2 Cr",
+  area: "1, 2, 3 BHK",
+  size: "550 - 1600 sq.ft",
+  description: "Budget-friendly apartments with all modern amenities. Close to Mumbai-Bangalore Highway.",
+  image: Kumarcity,
+  amenities: ["Pool", "Gym", "Garden", "Community Hall", "Security"],
+  builder: "Kumar Builders",
+  possession: "Ready to Move",
+  rating: 4.5
+}
   ];
 
   // New: Mandate & Sole Selling Projects
