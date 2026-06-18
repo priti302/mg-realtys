@@ -325,11 +325,13 @@ Our expert will connect with you shortly.
       <section className="hero-carousel">
         <div className="carousel-container">
           {heroSlides.map((slide, index) => (
-            <div 
-              key={slide.id} 
-              className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `linear-gradient(rgba(10, 31, 68, 0.7), rgba(10, 31, 68, 0.8)), url(${slide.bgImage})` }}
-            >
+           <div 
+  key={slide.id} 
+  className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+  style={{ 
+    backgroundImage: `url(${slide.bgImage})` 
+  }}
+>
               <div className="carousel-content">
                 <h1>{slide.title}</h1>
                 <p>{slide.subtitle}</p>
@@ -613,12 +615,9 @@ Our expert will connect with you shortly.
               </div>
             ))}
           </div>
-          <div className="testimonial-scroll-gradient-left"></div>
-          <div className="testimonial-scroll-gradient-right"></div>
+         
         </div>
-        <div className="scroll-indicator">
-          <span>← Scroll for more testimonials →</span>
-        </div>
+       
       </section>
 
       {/* CTA */}

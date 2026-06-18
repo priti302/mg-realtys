@@ -6,6 +6,11 @@ import logo from "../assets/logo.png";
 
 function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [showChat, setShowChat] = useState(false);
+  const [chatMessages, setChatMessages] = useState([
+    { id: 1, sender: 'bot', text: 'Hello! Welcome to MGRealtys. How can we help you today?' }
+  ]);
+  const [newMessage, setNewMessage] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +27,34 @@ function Footer() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const toggleChat = () => {
+    setShowChat(!showChat);
+  };
+
+  const handleSendMessage = (e) => {
+    e.preventDefault();
+    if (newMessage.trim()) {
+      // Add user message
+      const userMsg = {
+        id: Date.now(),
+        sender: 'user',
+        text: newMessage.trim()
+      };
+      setChatMessages([...chatMessages, userMsg]);
+      setNewMessage('');
+
+      // Simulate bot response
+      setTimeout(() => {
+        const botMsg = {
+          id: Date.now() + 1,
+          sender: 'bot',
+          text: 'Thank you for your message. Our team will get back to you shortly. Meanwhile, you can call us at 86983 15802 for immediate assistance.'
+        };
+        setChatMessages(prev => [...prev, botMsg]);
+      }, 1000);
+    }
   };
 
   const currentYear = new Date().getFullYear();
@@ -68,7 +101,7 @@ function Footer() {
             <h4>Contact Info</h4>
             <div className="contact-detail">
               <span className="contact-icon">📍</span>
-              <p>Office no:-308, 2nd floor, 18  Lattitude Mall, Gaikwad Nagar Rd, Kate Wasti, Punawale, Pune, Pimpri-Chinchwad, Maharashtra 411057</p>
+              <p>Office no:-308, 2nd floor, 18  Lattitude Mall, Gaikwad Nagar Rd, Kate Wasti, Punawale, Pune, Pimpri-Chinchwad, Maharashtra 411033</p>
             </div>
             <div className="contact-detail">
               <span className="contact-icon">📞</span>
@@ -126,22 +159,64 @@ function Footer() {
         </button>
       )}
 
-      {/* WhatsApp Floating Button */}
-      <a 
-        href="https://wa.me/918698315802?text=Hello%20MGRealtys%2C%20I%27m%20interested%20in%20your%20real%20estate%20services.%20Please%20share%20more%20details." 
-        className="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-      >
-        <div className="whatsapp-icon">
-          <svg viewBox="0 0 24 24" width="32" height="32">
-            <path fill="currentColor" d="M12.032 2.002c-5.517 0-10 4.483-10 10 0 1.745.452 3.389 1.242 4.813L2 22.002l5.252-1.297c1.371.728 2.915 1.13 4.557 1.13 5.518 0 10-4.483 10-10s-4.482-10-10-10zm0 18.4c-1.544 0-3.019-.424-4.283-1.162l-3.646.94.996-3.568c-.819-1.343-1.288-2.892-1.288-4.557 0-4.626 3.764-8.39 8.39-8.39 4.626 0 8.39 3.764 8.39 8.39s-3.764 8.39-8.39 8.39zm4.616-6.284c-.253-.126-1.494-.737-1.726-.821-.232-.085-.4-.126-.569.126-.168.252-.654.821-.802.99-.148.168-.295.189-.548.063-.253-.126-1.068-.394-2.033-1.255-.752-.67-1.259-1.496-1.406-1.749-.148-.253-.016-.39.111-.515.113-.115.253-.295.38-.443.126-.148.168-.253.253-.421.084-.168.042-.316-.021-.443-.063-.126-.569-1.373-.78-1.881-.205-.493-.414-.426-.569-.433-.147-.008-.316-.008-.485-.008-.168 0-.442.063-.674.316-.232.253-.885.864-.885 2.107 0 1.243.905 2.444 1.031 2.613.126.168 1.78 2.718 4.312 3.811.602.26 1.073.415 1.44.531.605.19 1.156.163 1.592.099.486-.072 1.494-.611 1.705-1.202.21-.591.21-1.097.147-1.202-.063-.105-.232-.168-.485-.295z"/>
-          </svg>
-          <span className="whatsapp-notification">1</span>
-        </div>
-        <span className="whatsapp-tooltip">Chat with us on WhatsApp!</span>
-      </a>
+      {/* Live Chat Floating Button */}
+      <div className="live-chat-container">
+        <button 
+          className="live-chat-btn" 
+          onClick={toggleChat}
+          aria-label="Live Chat"
+        >
+          <div className="chat-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28">
+              <path fill="currentColor" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+              <circle fill="currentColor" cx="12" cy="10" r="2"/>
+              <circle fill="currentColor" cx="8" cy="10" r="2"/>
+              <circle fill="currentColor" cx="16" cy="10" r="2"/>
+            </svg>
+            <span className="chat-notification">●</span>
+          </div>
+          <span className="chat-tooltip">Chat with us!</span>
+        </button>
+
+        {/* Chat Window */}
+        {showChat && (
+          <div className="chat-window">
+            <div className="chat-header">
+              <div className="chat-header-info">
+                <span className="chat-avatar">💬</span>
+                <div>
+                  <h4>Live Chat</h4>
+                  <p className="chat-status">Online</p>
+                </div>
+              </div>
+              <button className="chat-close" onClick={toggleChat}>✕</button>
+            </div>
+            <div className="chat-messages">
+              {chatMessages.map((msg) => (
+                <div key={msg.id} className={`chat-message ${msg.sender}`}>
+                  <div className="message-bubble">
+                    {msg.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <form className="chat-input-form" onSubmit={handleSendMessage}>
+              <input
+                type="text"
+                value={newMessage}
+                onChange={(e) => setNewMessage(e.target.value)}
+                placeholder="Type your message..."
+                className="chat-input"
+              />
+              <button type="submit" className="chat-send-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20">
+                  <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+        )}
+      </div>
     </>
   );
 }
