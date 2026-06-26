@@ -92,7 +92,7 @@ function About() {
         <div className="hero-content">
           <h1 className={`fade-up ${animated ? 'show' : ''}`}>About MGRealtys</h1>
           <p className={`fade-up-delay ${animated ? 'show' : ''}`}>
-            Your trusted partner in Pune's real estate journey since 2019
+            Your trusted partner in real estate journey since 2019
           </p>
           <div className={`hero-stats ${animated ? 'show' : ''}`}>
             {stats.map((stat, idx) => (
