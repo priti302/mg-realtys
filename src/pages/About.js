@@ -152,7 +152,7 @@ function About() {
               <div className="mv-divider"></div>
               <p className="mv-description">
                 Our vision is to establish MG Realtys as a diversified business group recognized for innovation, trust, and professional excellence across India.
-                Over the next 5 years, we aim to generate 20,000+ employment opportunities through sustainable business expansion and industry-leading services, contributing towards India's economic and professional growth.
+                Over the next 7 years, we aim to generate 20,000+ employment opportunities through sustainable business expansion and industry-leading services, contributing towards India's economic and professional growth.
               </p>
             </div>
           </div>
