@@ -70,11 +70,11 @@ function Footer() {
         
         <div className="footer-container">
           <div className="footer-section brand-section">
-           <h3 className="footer-logo">
+           {/* <h3 className="footer-logo">
   <img src={logo} alt="MGR Properties Logo" className="footer-logo-img" />
-</h3>
+</h3> */}
             <p className="footer-desc">
-              Trusted real estate consulting in Pune with 5+ years of experience.
+              Trusted real estate consulting in Pune with 7+ years of experience.
               Your partner in finding the perfect property.
             </p>
             <div className="trust-badge">
