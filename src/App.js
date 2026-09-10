@@ -17,6 +17,7 @@ import MandateSoleSelling from './pages/MandateSoleSelling';
 import LuxurySales from './pages/LuxurySales';
 import LandDealing from './pages/LandDealing';
 import Blog from './pages/Blog';
+import WhatsAppChannelButton from './components/WhatsAppChannelButton';
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -59,6 +60,7 @@ function App() {
         <Route path="/commercial" element={<Commercial />} />
       </Routes>
       <Footer />
+      <WhatsAppChannelButton />
     </div>
   );
 }

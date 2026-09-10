@@ -104,6 +104,16 @@ function MandateSoleSelling() {
     setSelectedProject(null);
   };
 
+  const salesJourney = [
+    { step: '01', icon: '📊', title: 'Market Analysis', description: 'Understand market demand, competition, pricing and buyer behaviour.' },
+    { step: '02', icon: '🎯', title: 'Targeted Marketing', description: 'Reach the right audience through strategic digital and offline marketing.' },
+    { step: '03', icon: '📲', title: 'Lead Generation', description: 'Generate and nurture qualified prospects for the project.' },
+    { step: '04', icon: '⭐', title: 'Customer Experience', description: 'Deliver a smooth and professional journey from enquiry to site visit.' },
+    { step: '05', icon: '🤝', title: 'Conversion', description: 'Turn qualified prospects into successful property buyers through expert sales support.' },
+    { step: '06', icon: '🔄', title: 'Referrals & Repeat Buyers', description: 'Build strong relationships that encourage referrals and repeat business.' },
+    { step: '07', icon: '🏠', title: 'Post-Sales', description: 'Continue supporting customers even after the sale for a complete end-to-end experience.' }
+  ];
+
   const ProjectCard = ({ project }) => (
     <div className="project-card">
       <div className="project-image">
@@ -153,6 +163,41 @@ function MandateSoleSelling() {
           <li>Dedicated support for negotiation and closing</li>
           <li>Priority booking for Pune's best locations</li>
         </ul>
+      </section>
+
+      <section className="sales-journey-section">
+        <div className="sales-journey-header">
+          <span className="journey-kicker">Sales Process</span>
+          <h2>From Market Insight to Post-Sales Success</h2>
+          <p className="journey-subtitle">
+            A complete end-to-end sales journey designed to maximize project visibility,
+            qualified leads, conversions and long-term customer relationships.
+          </p>
+        </div>
+
+        <div className="sales-journey">
+          {salesJourney.map((item, index) => (
+            <div className="journey-step" key={item.title}>
+              {index < salesJourney.length - 1 && <span className="journey-connector" aria-hidden="true" />}
+              <div className="journey-node-wrap">
+                <span className="journey-node">
+                  <span className="journey-step-number">{item.step}</span>
+                </span>
+              </div>
+              <article className="journey-card">
+                <span className="journey-icon" aria-hidden="true">{item.icon}</span>
+                <span className="journey-step-title">{item.title}</span>
+                <p>{item.description}</p>
+              </article>
+            </div>
+          ))}
+        </div>
+
+        <div className="journey-cta">
+          <h3>Ready to Accelerate Your Project Sales?</h3>
+          <p>Partner with MG Realtys for End-to-End Mandate &amp; Sole Selling Solutions.</p>
+          <Link to="/contact" className="journey-cta-button">DISCUSS YOUR PROJECT</Link>
+        </div>
       </section>
 
       <section className="projects-section">
