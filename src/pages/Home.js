@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import MandateSoleSellingSection from '../components/MandateSoleSellingSection.jsx';
 
 import lodha from "../assets/lodha.png";
 import shapoorji from "../assets/shapoorji.jpg";
@@ -358,6 +359,7 @@ Our expert will connect with you shortly.
         </div>
       </section>
 
+      <MandateSoleSellingSection />
 
     <section className="property-guarantee">
       <div className="guarantee-container">
