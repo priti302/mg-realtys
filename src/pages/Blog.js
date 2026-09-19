@@ -17,6 +17,11 @@ function Blog() {
   const [expandedFaq, setExpandedFaq] = useState(null);
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  const currentDate = new Intl.DateTimeFormat('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  }).format(new Date());
 
   // Blog Categories
   const categories = ['All', 'Property Investment', 'Home Buying Guide', 'Pune Real Estate News', 'Area Guides', 'Home Loan Tips', 'Luxury Properties', 'Commercial Real Estate', 'Sustainability', 'Smart Home Technology', 'Real Estate Law'];
@@ -378,7 +383,7 @@ function Blog() {
                     <div className="blog-footer">
                       <div className="blog-info">
                         <span className="author-info">{blog.author}</span>
-                        <span className="date-info">{blog.date}</span>
+                        <span className="date-info">{currentDate}</span>
                       </div>
                       <a 
                         href="#" 
