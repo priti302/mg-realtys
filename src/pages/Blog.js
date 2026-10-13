@@ -17,11 +17,11 @@ function Blog() {
   const [expandedFaq, setExpandedFaq] = useState(null);
   const [selectedBlog, setSelectedBlog] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const currentDate = new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric'
-  }).format(new Date());
+
+  const openBlog = (blog) => {
+    setSelectedBlog(blog);
+    setShowModal(true);
+  };
 
   // Blog Categories
   const categories = ['All', 'Property Investment', 'Home Buying Guide', 'Pune Real Estate News', 'Area Guides', 'Home Loan Tips', 'Luxury Properties', 'Commercial Real Estate', 'Sustainability', 'Smart Home Technology', 'Real Estate Law'];
@@ -30,39 +30,83 @@ function Blog() {
   const featuredBlogs = [
     {
       id: 1,
-      title: 'Top 10 Investment Properties in Pune 2026',
-      excerpt: 'Discover the most promising real estate investment opportunities in Pune with expected ROI and market trends.',
-      category: 'Property Investment',
+      title: 'Why Pune Remains One of India’s Best Property Markets',
+      excerpt: 'Explore the growth drivers, infrastructure upgrades, and buyer demand shaping Pune’s property market in 2026.',
+      category: 'Pune Real Estate News',
       image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1473&q=80',
       author: 'MG Realtys Team',
-      date: 'Aug 24 , 2026',
-      content: 'Pune real estate market has shown tremendous growth over the past few years. With IT companies establishing their presence and infrastructure development projects underway, several areas have emerged as ideal investment destinations.\n\nTop Investment Locations:\n1. Hinjewadi - Home to major IT parks with excellent connectivity\n2. Baner - Residential hub with good amenities and schools\n3. Koregaon Park - Premium locality with luxury apartments\n4. Viman Nagar - Developing area with high appreciation potential\n5. Magarpatta - Planned township with modern infrastructure\n\nExpected ROI ranges from 8-12% annually depending on the location and property type. We recommend consulting with our expert team to identify properties that match your investment goals.'
+      date: 'Aug 24, 2026',
+      content: 'Pune continues to attract homebuyers and investors because it balances strong employment growth with improving livability. The city’s IT hubs, educational institutes, and metro connectivity are creating long-term demand across multiple property segments.\n\nWhat is driving the market?\n• Expansion of IT and business parks in Hinjewadi, Kharadi, and Baner\n• Improved road and metro connectivity across the city\n• Rising end-user demand from young professionals and families\n• Steady rental activity and reliable appreciation in strategic areas\n\nFor buyers, Pune offers a mix of affordable entry points and premium lifestyle neighbourhoods. For investors, the city remains attractive due to consistent demand and strong infrastructure support.'
     },
     {
       id: 2,
-      title: 'Complete Home Buying Checklist for First-Time Buyers',
-      excerpt: 'A comprehensive guide covering legal verification, documentation, property inspection, and negotiation tips.',
+      title: 'Home Buying Checklist for First-Time Buyers in Pune',
+      excerpt: 'A practical step-by-step guide covering budget planning, legal checks, financing, and final property verification.',
       category: 'Home Buying Guide',
       image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
       author: 'MG Realtys Team',
-      date: 'Aug 24, 2026',
-      content: 'Buying your first home is a significant decision. This comprehensive checklist will guide you through every step of the process.\n\nPre-Purchase Checklist:\n• Check your credit score and get pre-approved for loan\n• Determine your budget and savings\n• Research neighborhoods and localities\n• Check property title and legal documents\n• Get property inspected by experts\n• Verify RERA registration\n• Check for pending litigation\n• Review society/building approvals\n\nDuring Purchase:\n• Negotiate the best price\n• Get home insurance quote\n• Complete due diligence\n• Finalize loan documents\n• Register the property\n\nFollow this checklist carefully and don\'t hesitate to consult professionals at each stage.'
+      date: 'Aug 20, 2026',
+      content: 'Buying your first home is exciting, but it should be backed by careful planning and due diligence. Pune homebuyers need to look beyond the brochure and evaluate the actual long-term value of the property.\n\nBefore you sign:\n• Set a realistic budget and account for stamp duty and registration costs\n• Check the developer’s reputation and past project delivery record\n• Verify legal titles, approvals, and RERA registration\n• Review the layout, amenities, and future infrastructure in the area\n\nA smart purchase is not just about the price. It is about choosing a property that fits your lifestyle, budget, and growth potential in the neighbourhood.'
     },
     {
       id: 3,
-      title: 'Pune Real Estate Market: Growth Trends & Future Outlook',
-      excerpt: 'Latest market analysis, property price trends, and predictions for Pune\'s real estate sector in 2026.',
-      category: 'Pune Real Estate News',
+      title: 'Best Pune Localities for Families and Investors in 2026',
+      excerpt: 'From Baner to Wakad, discover the neighbourhoods offering strong value, connectivity, and long-term appreciation.',
+      category: 'Area Guides',
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
       author: 'MG Realtys Team',
-      date: 'Aug 24, 2026',
-      content: 'Pune\'s real estate sector has witnessed remarkable growth in 2026. With an influx of IT professionals and increasing infrastructure development, the property market continues to show strong fundamentals.\n\nMarket Trends:\n• Property prices increased by 12-15% year-over-year\n• High demand for 2-3 BHK apartments\n• Growing interest in co-working and commercial spaces\n• Surge in demand from investors and end-users\n• Rising trend of sustainable and green buildings\n\nFuture Outlook:\n• Expected growth of 10-12% in the next 2 years\n• Expansion of metro rail network will boost property values\n• Increasing demand in satellite cities\n• Growth in affordable housing segment\n\nThis is an excellent time to invest in Pune\'s real estate market for both end-users and investors.'
+      date: 'Aug 16, 2026',
+      content: 'Choosing the right locality can significantly affect both your lifestyle and your return on investment. In Pune, areas with schools, transport access, commercial activity, and future development are seeing the strongest momentum.\n\nPopular choices include:\n• Baner and Aundh for premium family living\n• Wakad and Ravet for value-driven buyers\n• Hinjewadi for professionals working in IT parks\n• Kharadi for connectivity and modern urban living\n\nBefore deciding, align your home choice with your commuting pattern, lifestyle needs, and investment horizon. A strategically chosen locality typically offers better resale value and rental demand.'
+    }
+  ];
+
+  const newBlogPosts = [
+    {
+      id: 21,
+      title: 'Top 5 Reasons to Invest in Pune Real Estate Before 2027',
+      excerpt: 'Why buyers are moving quickly into Pune’s key corridors as infrastructure and demand continue to rise.',
+      category: 'Property Investment',
+      image: 'https://images.unsplash.com/photo-1460317442991-0ec209397118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+      author: 'MG Realtys Team',
+      date: 'Aug 28, 2026',
+      content: 'Pune offers a rare combination of affordability, growth, and long-term demand that makes it appealing for both investors and end-users. Strategic buyers are already positioning themselves in high-growth neighbourhoods before demand pushes prices higher.\n\nKey reasons to invest now:\n• Upcoming infrastructure and metro expansion\n• Rising demand from IT professionals and relocating families\n• Healthy rental yield in premium and emerging corridors\n• Strong appreciation in well-connected micro-markets\n• A healthy balance between residential demand and commercial growth\n\nIf your goal is wealth creation through property, Pune remains one of the smarter cities to act in today.'
+    },
+    {
+      id: 22,
+      title: 'How to Choose the Right Real Estate Agent in Pune',
+      excerpt: 'Look beyond advertisements and select an agent who understands your goals, budget, and local market dynamics.',
+      category: 'Home Buying Guide',
+      image: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+      author: 'MG Realtys Team',
+      date: 'Aug 26, 2026',
+      content: 'The right real estate consultant can make the difference between a stressful search and a smooth purchase. In a competitive market like Pune, local expertise matters.\n\nWhat to look for in an agent:\n• Deep knowledge of the local market and current price trends\n• Transparency in communication and documentation\n• Strong relationships with trusted developers and legal experts\n• Ability to match you with properties aligned to your goals\n\nA good agent understands your needs, anticipates risk, and helps you make confident decisions without pressure.'
+    },
+    {
+      id: 23,
+      title: 'How Affordable Housing in Pune Is Changing Buyer Behaviour',
+      excerpt: 'Many first-time buyers are now prioritising practical value, connectivity, and future resale potential over luxury extras.',
+      category: 'Home Buying Guide',
+      image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+      author: 'MG Realtys Team',
+      date: 'Aug 22, 2026',
+      content: 'Affordable housing in Pune is reshaping the market as more buyers focus on long-term value. Families want homes that offer strong connectivity, essential amenities, and a healthy investment outlook without overextending their budget.\n\nThis shift is driving demand in emerging areas with strong infrastructure. Buyers are placing greater emphasis on quality of life, community planning, and future appreciation rather than only the number of premium features in a project.\n\nThe winning formula is a well-located, well-priced home with reliable builders, good social infrastructure, and future growth potential.'
+    },
+    {
+      id: 24,
+      title: 'Luxury Living in Pune: What Today’s Buyers Really Want',
+      excerpt: 'Premium homebuyers are prioritising design, wellness amenities, privacy, and long-term value in Pune’s top localities.',
+      category: 'Luxury Properties',
+      image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+      author: 'MG Realtys Team',
+      date: 'Aug 18, 2026',
+      content: 'Luxury living in Pune is no longer defined only by price. Today’s buyers want homes that deliver a complete lifestyle experience — from wellness spaces and smart technology to privacy and quality construction.\n\nThe most sought-after luxury features include:\n• Spacious layouts and premium finishes\n• Smart home integration and security systems\n• Wellness amenities such as gyms, pools, and green spaces\n• Seamless access to schools, business districts, and social hubs\n\nFor discerning buyers, luxury homes are valued not just for status, but for lifestyle quality and sustained appreciation in the best parts of the city.'
     }
   ];
 
   // All Blog Posts
   const allBlogs = [
     ...featuredBlogs,
+    ...newBlogPosts,
     {
       id: 4,
       title: 'Hinjewadi IT Park Area Guide: Living & Investing',
@@ -328,17 +372,13 @@ function Blog() {
                 <div className="featured-content">
                   <h3>{blog.title}</h3>
                   <p className="excerpt">{blog.excerpt}</p>
-                  <a 
-                    href="#" 
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setSelectedBlog(blog);
-                      setShowModal(true);
-                    }}
+                  <button
+                    type="button"
+                    onClick={() => openBlog(blog)}
                     className="read-more"
                   >
                     Read More →
-                  </a>
+                  </button>
                 </div>
               </article>
             ))}
@@ -383,19 +423,15 @@ function Blog() {
                     <div className="blog-footer">
                       <div className="blog-info">
                         <span className="author-info">{blog.author}</span>
-                        <span className="date-info">{currentDate}</span>
+                        <span className="date-info">{blog.date}</span>
                       </div>
-                      <a 
-                        href="#" 
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setSelectedBlog(blog);
-                          setShowModal(true);
-                        }}
+                      <button
+                        type="button"
+                        onClick={() => openBlog(blog)}
                         className="read-btn"
                       >
                         Read
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </article>
@@ -426,7 +462,7 @@ function Blog() {
             <ul className="posts-list">
               {recentPosts.map((post) => (
                 <li key={post.id}>
-                  <a href="#">{post.title}</a>
+                  <button type="button" className="post-link" onClick={() => openBlog(post)}>{post.title}</button>
                 </li>
               ))}
             </ul>
@@ -438,7 +474,7 @@ function Blog() {
             <ul className="posts-list">
               {popularPosts.map((post) => (
                 <li key={post.id}>
-                  <a href="#">{post.title}</a>
+                  <button type="button" className="post-link" onClick={() => openBlog(post)}>{post.title}</button>
                 </li>
               ))}
             </ul>
