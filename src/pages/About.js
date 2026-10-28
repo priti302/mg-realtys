@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react';
 import './About.css';
 import ceoImg from "../assets/ceo.PNG";
 import hrImg from "../assets/hr.png";
-import coowner from "../assets/coowner.png";
-import Teamleader from "../assets/Teamleader.png";
 import web from "../assets/web.jpeg";
 import pre from "../assets/pre.jpeg";
 
@@ -31,13 +29,7 @@ function About() {
   img: ceoImg,
   bio: 'Leading MG Realty with vision, expertise, and integrity.',
 },
-{
-  name: 'Shradha Singh',
-  role: 'Director & Co-owner',
-  img: coowner,
-  bio: 'Driving growth through leadership and customer-focused solutions.',
- 
-},
+
 {
   name: 'Pallavi Gondhane',
   role: 'HR & Digital Marketing Head',
@@ -53,13 +45,7 @@ function About() {
  
 },
 
-{
-  name: 'Grace Aghamkar',
-  role: 'Sr. Team leader',
-  img: Teamleader,
-  bio: 'Leading with vision, inspiring success, and building lasting relationships through trust, expertise, and commitment.',
- 
-},
+
 
 {
   name: 'Gayatri Kamble',

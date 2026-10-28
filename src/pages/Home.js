@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 import MandateSoleSellingSection from '../components/MandateSoleSellingSection.jsx';
+import SEO from "../components/SEO";
 
 import lodha from "../assets/lodha.png";
 import shapoorji from "../assets/shapoorji.jpg";
@@ -24,6 +25,15 @@ import vanaha from "../assets/vanaha.png";
 
 
 function Home() {
+
+
+   <SEO
+        title="Real Estate Consultant in Pune | MG Realtys"
+        description="Discover residential properties and new projects in Pune with MG Realtys. Get property guidance and site visit assistance."
+        path="/"
+      />
+
+      
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
