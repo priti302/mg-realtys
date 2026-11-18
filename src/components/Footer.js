@@ -11,7 +11,7 @@ function Footer() {
     { id: 1, sender: 'bot', text: 'Hello! Welcome to MGRealtys. How can we help you today?' }
   ]);
   const [newMessage, setNewMessage] = useState('');
-
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 300) {
